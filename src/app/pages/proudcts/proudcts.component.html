@@ -1,0 +1,28 @@
+<section class="m-sec-style mx-auto  ">
+  <h2 class="text-green-600 text-center font-medium text-4xl capitalize mb-3"> Discover Our Products </h2>
+  <div class="grid sm:grid-cols-2  md:grid-cols-4 gap-4 ">
+    @for (myprod of allproudcts; track myprod.id) {
+      <div class="border border-green-400/50 rounded-md shadow overflow-hidden myproudcts" >
+
+        <div class="card-img " >
+          <img [src]='myprod.imageCover' class="w-full h-[250px]  object-contain " [alt]="myprod.title">
+        </div>
+        <div class="card-body" >
+          <h4 class="text-green-500 text-lg" > {{myprod.category.slug}}  </h4>
+          <h3 class="font-medium text-black" >{{myprod.title .split(' ' , 2) .join(' ')}}</h3>
+        </div>
+
+        <div class="flex justify-between items-center ">
+          <span class="text-lg font-light">  {{myprod.price}}  EGP</span>
+          <div>
+            <i class="fas fa-star text-yellow-300 "></i>
+            <span class="text-gray-500">{{myprod.ratingsAverage}}</span>
+          </div>
+
+        </div>
+      </div>
+
+    }
+
+  </div>
+</section>

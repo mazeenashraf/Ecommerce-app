@@ -1,0 +1,16 @@
+<section class="m-sec-style   ">
+  <h2 class="text-green-600 text-center font-medium text-4xl capitalize mb-3">  Our brands </h2>
+  
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 p-4 gap-3" >
+ @for (brand of allbrands; track brand._id) {
+  <div class="border border-green-400/50 rounded-md shadow overflow-hidden mybrands" >
+    <div>
+      <img [src]="brand.image" class="w-full h-[250px] object-contain"  [alt]="brand.name">
+    </div>
+    <div>
+      <h4 class="text-green-500 text-lg" > {{brand.name}} </h4>
+    </div>
+   </div>
+ }
+  </div>
+</section>

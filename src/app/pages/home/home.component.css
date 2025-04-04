@@ -1,0 +1,12 @@
+.card {
+  position: relative;
+}
+.card button {
+  transform: translatey(100%);
+  transition: all 0.4s;
+  opacity: 0;
+}
+.card:hover button {
+  transform: translateY(0);
+  opacity: 1;
+}/*# sourceMappingURL=home.component.css.map */

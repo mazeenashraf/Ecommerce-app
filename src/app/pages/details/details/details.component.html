@@ -1,0 +1,35 @@
+@if (detailsproudct) {
+  <section>
+    <div>
+      <h2 class="text-4xl font-medium text-green-600 my-3 capitalize text-center " >details proudct</h2>
+    </div>
+    <div class="parent grid md:grid-cols-[30%_70%] p-6 gap-3 items-center"  >
+      <div>
+        <img [src]="detailsproudct.imageCover" class="w-full" [alt]=" detailsproudct.title ">
+
+
+
+      </div>
+      <div  class="mx-auto p-5" >
+        <h2 class="text-green-500 mb-2 text-3xl font-light" > {{detailsproudct.title}} </h2>
+        <p class="leading-7 text-2xl text-gray-600 " > {{detailsproudct.description}} </p>
+        <h3 class="text-green-500 text-xl font-light " > {{detailsproudct.category.name}} </h3>
+        <div class="flex justify-between items-center p-5 ">
+          <span class="text-lg" > {{detailsproudct.price}} EGP</span>
+          <div>
+            <i class="fas fa-star text-yellow-300 "></i>
+            <span class="text-gray-500">{{detailsproudct.ratingsAverage}}</span>
+          </div>
+
+        </div>
+        <button class="btn-main w-full">+Add to cart</button>
+        <br>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+}

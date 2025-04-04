@@ -1,0 +1,71 @@
+<section>
+  <div class="grid md:grid-cols-[70%_30%]">
+    <owl-carousel-o [options]="customMainSlider">
+      <ng-template carouselSlide> <img src="/images ecom/img1.avif" class="w-full h-[300px] " alt="our-imgs-home"></ng-template>
+      <ng-template carouselSlide> <img src="/images ecom/img2.avif" class="w-full h-[300px] " alt="our-imgs-home"></ng-template>
+      <ng-template carouselSlide> <img src="/images ecom/img3.avif" class="w-full h-[300px] " alt="our-imgs-home"></ng-template>
+      <ng-template carouselSlide> <img src="/images ecom/img4.avif" class="w-full h-[300px] " alt="our-imgs-home"></ng-template>
+      <ng-template carouselSlide> <img src="/images ecom/img5.avif" class="w-full h-[300px] " alt="our-imgs-home"></ng-template>
+      <ng-template carouselSlide> <img src="/images ecom/img6.avif" class="w-full h-[300px] " alt="our-imgs-home"></ng-template>
+
+    </owl-carousel-o>
+    <div>
+      <img src="/images ecom/grocery-banner.png" class="w-full h-[150px] " alt="our-imgs-home">
+      <img src="/images ecom/grocery-banner-2.jpeg" class="w-full h-[150px] " alt="our-imgs-home">
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <h2 class="text-green-600 text-3xl mb-2">popular catgeories</h2>
+  <owl-carousel-o [options]="customOptions">
+
+
+    @for (cat of categories(); track cat._id) {
+      <ng-template carouselSlide>
+        <div>
+          <img [src]="cat.image" class="w-full h-[250px] "  [alt]="cat.name">
+          <h3 class="text-green-600" >{{cat.name}}</h3>
+        </div>
+
+      </ng-template>
+    }
+
+
+  </owl-carousel-o>
+</section>
+<!-- pipe date  -->
+<!-- <p class="text-lg" > Date:  {{date|date:'full'}}</p> -->
+ <section>
+  <h2 class="text-4xl mb-3" >popularcategories</h2>
+  <div class=" card grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 ">
+  @for (prod of proudcts().slice(0,12); track prod.id) {
+    <div class="border border-green-400/50 rounded-md shadow overflow-hidden relative "   >
+
+     <div [routerLink]="['/details' , prod.id]" >
+      <div class="card-img">
+        <img [src]="prod.imageCover" class="w-full h-[250px] object-contain"  [alt]="prod.title">
+      </div>
+      <div class="card-body p-2">
+        <h4 class="text-green-500 text-xs" > {{prod.category.name | titlecase}} </h4>
+        <h3 class="font-medium" >{{prod.title.split(" " ,  2).join(" ")}}</h3>
+
+        <div class="flex justify-between items-center ">
+          <span> {{prod.price}} EGP</span>
+          <div>
+            <i class="fas fa-star text-yellow-300 "></i>
+            <span class="text-gray-500">{{prod.ratingsAverage}}</span>
+          </div>
+
+        </div>
+      </div>
+     </div>
+
+      <button class="bg-green-600 text-white py-2 px-10 border rounded w-[90%] mx-auto block" (click)="addCartItem(prod.id)" >add to cart</button>
+    </div>
+  }
+
+
+  </div>
+</section>

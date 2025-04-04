@@ -1,0 +1,17 @@
+<section class="m-sec-style" >
+  <h1 class="text-green-600 text-center font-medium text-4xl capitalize mb-2" >Discover a World of Choices</h1>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 p-4 gap-3" >
+    @for (catg of userCategorieslist; track catg._id) {
+      <div class="border shadow rounded-md border-green-500 " [routerLink]="['/categorydeatils' , catg._id]">
+        <div >
+          <img [src]="catg.image" class="w-full h-[300px] object-contain" [alt]="catg.name">
+        </div>
+        <div>
+          <h3 class="text-green-500 text-2xl "> {{catg.name}}  </h3>
+        </div>
+      </div>
+    }
+  </div>
+
+
+</section>
